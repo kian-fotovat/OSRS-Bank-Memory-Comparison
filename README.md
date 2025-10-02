@@ -1,10 +1,19 @@
 # Old School RuneScape Bank Value Analyzer
 
-This script is a Streamlit web application designed to analyze and compare the value of an Old School RuneScape (OSRS) bank over time. It is built to work with data exported from the **Bank Memory** plugin for RuneLite. By uploading multiple bank data files, users can visualize changes in item quantities and values, identify market-driven price fluctuations, and track the introduction of new items to their bank.
+This script is a [Streamlit](https://streamlit.io/) web application designed to analyze and compare the value of an Old School RuneScape (OSRS) bank over time. It is built to work with data exported from the [Bank Memory](https://runelite.net/plugin-hub/show/bank-memory) plugin for [RuneLite](https://runelite.net/). By uploading multiple bank data files, users can visualize changes in item quantities and values, identify market-driven price fluctuations, and track the introduction of new items to their bank.
 
 ## How to Use
 
-1.  **Export Your Bank Data**: Use the **Bank Memory** plugin within RuneLite to export your OSRS bank contents. This will generate a tab-separated values (`.txt`) file. The file must contain the following columns: `Item id`, `Item name`, and `Item quantity`.
+1.  **Export Your Bank Data**: Use the **Bank Memory** plugin within RuneLite to export your OSRS bank contents. A brief overview of the process:
+    *   Right-click on a saved bank in RuneLite.
+    *   Select "Copy bank data" from the context menu.
+    *   Paste the copied data into a text editor.
+    *   Save the file with a `.txt` extension.
+
+    The file will contain the following columns:
+    *   `Item id`: The unique identifier for each item in the bank.
+    *   `Item name`: The human-readable name of the item.
+    *   `Item quantity`: The number of items of this type in the bank.
 
 2.  **Upload Files**: In the web application's sidebar, click the "Upload tab-separated bank files" button and select two or more of your exported bank files.
 
@@ -35,10 +44,10 @@ This script is a Streamlit web application designed to analyze and compare the v
 
 ## Credits
 
-*   **Bank Data Export**: Bank data is exported using the [Bank Memory](https://runelite.net/plugin-hub/show/bank-memory) plugin for RuneLite.
+*   **Bank Data Export**: Bank data is exported using the [Bank Memory](https://runelite.net/plugin-hub/show/bank-memory) plugin for [RuneLite](https://runelite.net/).
 *   **Price Data Source**: Historical item price data is sourced from the [OSRS Wiki API](https://prices.runescape.wiki/api).
 *   **Application Framework**: This application is built using the [Streamlit](https://streamlit.io/) framework.
 *   **Core Libraries**: Python libraries used include [Pandas](https://pandas.pydata.org/), [Plotly Express](https://plotly.com/python/plotly-express/), [requests](https://github.com/psf/requests/), and all their dependencies.
 
 ## Disclaimer
-*   **Google AI Studio**: This application was quickly put together using [Google AI Studio](https://ai.google.dev/). Expect to find bugs, bad code, or other issues. Feel free to open a pull request with any improvements.
+*   This application was quickly put together using [Google AI Studio](https://ai.google.dev/). Expect to find bugs, bad code, or other issues. Feel free to open a pull request with any improvements.
