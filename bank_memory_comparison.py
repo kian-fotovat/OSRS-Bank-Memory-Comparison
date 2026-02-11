@@ -346,11 +346,11 @@ if st.session_state.get("comparison_complete", False):
     for col in comparison_df.columns:
         if "Qty" in str(col):
             comp_formatter[col] = "{:,.0f}"
-    st.dataframe(filtered_comp_df.style.format(comp_formatter), width="content")
+    st.dataframe(filtered_comp_df.style.format(comp_formatter), width="stretch")
 
     if not new_items_df.empty:
         st.header(f"New Items Added Between {oldest_date} and {latest_date}")
-        st.dataframe(filtered_new_items_df.style.format(comp_formatter), width="content")
+        st.dataframe(filtered_new_items_df.style.format(comp_formatter), width="stretch")
 
     st.header("Market-Driven Value Changes")
     if not market_movers_df.empty:
@@ -379,7 +379,7 @@ if st.session_state.get("comparison_complete", False):
             f"Qty {latest_date}": "{:,.0f}",
         }
         col_order = [f"Qty {oldest_date}", f"Qty {latest_date}", f"Price {oldest_date}", f"Price {latest_date}", "Value Change from Market", "Value Change from Quantity", "Total Value Change"]
-        st.dataframe(filtered_market_df[col_order].style.format(market_formatter), width="content")
+        st.dataframe(filtered_market_df[col_order].style.format(market_formatter), width="stretch")
     else:
         st.info(f"No items were found where price change impact was greater than quantity change impact between {oldest_date} and {latest_date}.")
 
@@ -409,7 +409,7 @@ if st.session_state.get("comparison_complete", False):
                 labels={"x": "Item Name", "value_change": "Value Change (GP)"},
                 color_discrete_sequence=["green"],
             )
-            st.plotly_chart(fig, width="content")
+            st.plotly_chart(fig, width="stretch")
 
     with col2:
         st.subheader("Item Value Losers")
@@ -431,4 +431,4 @@ if st.session_state.get("comparison_complete", False):
                 labels={"x": "Item Name", "value_change": "Value Change (GP)"},
                 color_discrete_sequence=["red"],
             )
-            st.plotly_chart(fig, width="content")
+            st.plotly_chart(fig, width="stretch")
